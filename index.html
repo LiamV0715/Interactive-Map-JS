@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="index.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    #map { 
+        height: 600px;
+        background-color: #ccc;
+        padding: 30px;
+    }
+    #map::before{
+        content: 'LOADING';
+        font-size: 3em;
+        text-align: center;
+        width: 98%;
+        position: absolute;
+        margin-top: 3em;
+        background-color: white;
+        padding: 20px;
+    }
+    .leaflet-popup-content-wrapper {
+        width: 100%;
+    }
+    .b {
+        background-color: white;
+    }
+    .flexform {
+        background-color: lightcyan;
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .Here {
+        background-color: whitesmoke;
+        color: slategray;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        font-size: 30px;
+    }
+    #aftermap {
+        background-color: lightcyan;
+        width: 100%;
+        height: 300px;
+    }
+  </style>
+</head>
+<body>
+    <form class="flexform">
+        <select id="business" class="btn btn-success dropdown-toggle">
+            <option value="null">Get Searching!</option>
+            <option value="restaurant">Restaurants</option>
+            <option value="coffee">Coffee Shops</option>
+            <option value="hotel">Hotels</option>
+            <option value="market">Markets</option>
+        </select>
+        <button id="submit" class="btn btn-outline-info">Search</button>
+    </form>
+    <div id="map"></div>
+    <div id="aftermap"></div>
+</body>
+</html>
